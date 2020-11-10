@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.nakhmadov.footballapp.data.db.models.Player" />
+
+        <variable
+            name="listener"
+            type="com.nakhmadov.footballapp.listeners.PlayerClickListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FAFAFA"
+        android:onClick="@{() -> listener.onPlayerClickListener(item)}"
+        android:paddingBottom="6dp">
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="@dimen/dp10"
+            android:background="@color/separatorColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_image" />
+
+        <TextView
+            android:id="@+id/shirt_number_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/marmelad"
+            android:textColor="@color/textGrayColorLight"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+            app:layout_constraintEnd_toStartOf="@+id/shirt_number_guideline"
+            app:layout_constraintStart_toStartOf="@+id/shirt_number_guideline"
+            app:layout_constraintTop_toTopOf="@+id/profile_image"
+            app:setTextOrDefis="@{item.shirtNumber.toString()}"
+            tools:text="22" />
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintStart_toStartOf="@+id/profile_image_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/player_name_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/normal_spacing"
+            android:fontFamily="@font/marmelad"
+            android:textColor="@color/textGrayColor"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/from_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/name_guideline"
+            app:layout_constraintTop_toTopOf="@+id/profile_image"
+            app:setTextOrEmpty="@{item.name}"
+            tools:text="Kepa Arrizabalaga" />
+
+        <TextView
+            android:id="@+id/from_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/marmelad"
+            android:text="From:"
+            android:textColor="@color/textGrayColor1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+            app:layout_constraintStart_toStartOf="@+id/name_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/player_name_text" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_spacing"
+            android:layout_marginEnd="@dimen/normal_spacing"
+            android:fontFamily="@font/marmelad"
+            android:textColor="@color/textGrayColor"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/from_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/from_label"
+            app:layout_constraintTop_toTopOf="@id/from_label"
+            app:setTextOrEmpty="@{item.nationality}"
+            tools:text="Denmark" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/shirt_number_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="32dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/profile_image_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="60dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/name_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="130dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

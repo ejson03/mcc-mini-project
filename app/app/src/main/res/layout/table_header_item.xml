@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_background"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:id="@+id/player_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/marmelad"
+            android:text="@string/pos"
+            android:textColor="@color/textGrayColorLight"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/position_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/marmelad"
+            android:text="@string/team"
+            android:textColor="@color/textGrayColorLight"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/team_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/marmelad"
+            android:text="@string/pts"
+            android:textColor="@color/textGrayColorLight"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/pts_guideline"
+            app:layout_constraintStart_toStartOf="@+id/pts_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/marmelad"
+            android:text="@string/gd"
+            android:textColor="@color/textGrayColorLight"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/gd_guideline"
+            app:layout_constraintStart_toStartOf="@+id/gd_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/marmelad"
+            android:text="@string/l"
+            android:textColor="@color/textGrayColorLight"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/lose_guideline"
+            app:layout_constraintStart_toStartOf="@+id/lose_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/marmelad"
+            android:text="@string/d"
+            android:textColor="@color/textGrayColorLight"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/draw_guideline"
+            app:layout_constraintStart_toStartOf="@+id/draw_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/marmelad"
+            android:text="@string/w"
+            android:textColor="@color/textGrayColorLight"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/won_guideline"
+            app:layout_constraintStart_toStartOf="@+id/won_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/marmelad"
+            android:text="@string/p"
+            android:textColor="@color/textGrayColorLight"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/played_guideline"
+            app:layout_constraintStart_toStartOf="@+id/played_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/position_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="10dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/team_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="44dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/team_code_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="80dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/pts_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="28dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gd_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="60dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lose_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="88dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/draw_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="120dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/won_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="152dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/played_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="184dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

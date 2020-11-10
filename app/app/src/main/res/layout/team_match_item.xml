@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.nakhmadov.footballapp.ui.models.MatchDomain" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/listsBackground"
+        android:paddingBottom="6dp">
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="@dimen/dp10"
+            android:background="@color/separatorColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/competition_logo_image" />
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/mach_date_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_spacing"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="@dimen/small_spacing"
+            android:fontFamily="@font/marmelad"
+            android:textColor="@color/textGrayColor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/content_guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:setDateOrEmpty="@{item.matchDate}"
+            tools:text="Sun 10 Nov 2019" />
+
+        <ImageView
+            android:id="@+id/competition_logo_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/small_spacing"
+            app:imageWithUrl="@{item.competitionEmblemUrl}"
+            app:layout_constraintEnd_toEndOf="@+id/mach_date_text"
+            app:layout_constraintStart_toStartOf="@+id/mach_date_text"
+            app:layout_constraintTop_toBottomOf="@+id/mach_date_text"
+            tools:src="@drawable/ic_competition" />
+
+
+        <TextView
+            android:id="@+id/home_team_code_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/marmelad"
+            android:textColor="@color/textGrayColor"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/home_team_logo_image"
+            app:layout_constraintEnd_toStartOf="@id/home_team_logo_image"
+            app:layout_constraintStart_toStartOf="@+id/content_guideline"
+            app:layout_constraintTop_toTopOf="@+id/home_team_logo_image"
+            app:setTextOrEmpty="@{item.homeTeamCode}"
+            tools:text="CHE" />
+
+        <ImageView
+            android:id="@+id/home_team_logo_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/small_spacing"
+            android:layout_marginEnd="@dimen/small_spacing"
+            app:imageWithUrl="@{item.homeTeamEmblemUrl}"
+            app:layout_constraintBottom_toBottomOf="@+id/competition_logo_image"
+            app:layout_constraintEnd_toStartOf="@id/home_team_score_text"
+            app:layout_constraintStart_toEndOf="@+id/home_team_code_text"
+            app:layout_constraintTop_toTopOf="@+id/mach_date_text"
+            tools:src="@drawable/ic_competition" />
+
+        <TextView
+            android:id="@+id/home_team_score_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/marmelad"
+            android:textColor="@color/textGrayColor"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/home_team_logo_image"
+            app:layout_constraintEnd_toStartOf="@id/score_separator_text"
+            app:layout_constraintStart_toEndOf="@+id/home_team_logo_image"
+            app:layout_constraintTop_toTopOf="@+id/home_team_logo_image"
+            app:setTextOrDefis="@{item.homeTeamScore.toString()}"
+            tools:text="2" />
+
+
+        <TextView
+            android:id="@+id/away_team_code_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/small_spacing"
+            android:fontFamily="@font/marmelad"
+            android:textColor="@color/textGrayColor"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/away_team_logo_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/away_team_logo_image"
+            app:layout_constraintTop_toTopOf="@+id/away_team_logo_image"
+            app:setTextOrEmpty="@{item.awayTeamCode}"
+            tools:text="CRY" />
+
+        <ImageView
+            android:id="@+id/away_team_logo_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/small_spacing"
+            android:layout_marginEnd="@dimen/small_spacing"
+            app:imageWithUrl="@{item.awayTeamEmblemUrl}"
+            app:layout_constraintBottom_toBottomOf="@+id/competition_logo_image"
+            app:layout_constraintEnd_toStartOf="@+id/away_team_code_text"
+            app:layout_constraintStart_toEndOf="@id/away_team_score_text"
+            app:layout_constraintTop_toTopOf="@+id/mach_date_text"
+            tools:src="@drawable/ic_competition" />
+
+        <TextView
+            android:id="@+id/away_team_score_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/marmelad"
+            android:textColor="@color/textGrayColor"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/away_team_logo_image"
+            app:layout_constraintEnd_toStartOf="@+id/away_team_logo_image"
+            app:layout_constraintStart_toEndOf="@id/score_separator_text"
+            app:layout_constraintTop_toTopOf="@+id/away_team_logo_image"
+            app:setTextOrDefis="@{item.awayTeamScore.toString()}"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/score_separator_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/marmelad"
+            android:textColor="@color/textGrayColor"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/home_team_logo_image"
+            app:layout_constraintEnd_toStartOf="@+id/away_team_score_text"
+            app:layout_constraintStart_toEndOf="@+id/home_team_score_text"
+            app:layout_constraintTop_toTopOf="@+id/home_team_logo_image"
+            android:text=":" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/content_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="112dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

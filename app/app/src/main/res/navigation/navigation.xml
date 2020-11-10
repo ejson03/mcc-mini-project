@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/competitionsListFragment">
+
+    <fragment
+        android:id="@+id/competitionsListFragment"
+        android:name="com.nakhmadov.footballapp.ui.competitions_list.CompetitionsListFragment"
+        android:label="CompetitionsListFragment"
+        tools:layout="@layout/competitions_list_fragment">
+        <action
+            android:id="@+id/action_competitionsListFragment_to_competitionDetail"
+            app:destination="@id/competitionDetail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.nakhmadov.footballapp.ui.favorite.FavoriteFragment"
+        android:label="favorite_fragment"
+        tools:layout="@layout/favorite_fragment" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_competitionDetail"
+            app:destination="@id/competitionDetail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_teamFragment"
+            app:destination="@id/teamFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/matchesFragment"
+        android:name="com.nakhmadov.footballapp.ui.matches.MatchesFragment"
+        android:label="matches_fragment"
+        tools:layout="@layout/matches_fragment" >
+        <action
+            android:id="@+id/action_matchesFragment_to_teamFragment"
+            app:destination="@id/teamFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/competitionDetail"
+        android:name="com.nakhmadov.footballapp.ui.competition_detail.CompetitionDetailFragment"
+        android:label="competition_detail_fragment"
+        tools:layout="@layout/competition_detail_fragment">
+        <argument
+            android:name="competitionId"
+            app:argType="integer" />
+        <argument
+            android:name="competitionName"
+            app:argType="string" />
+        <argument
+            android:name="isFavorite"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_competitionDetail_to_competitionTeamsFragment"
+            app:destination="@id/competitionTeamsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_competitionDetail_to_competitionStatsFragment"
+            app:destination="@id/competitionStatsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_competitionDetail_to_competitionMatches"
+            app:destination="@id/competitionMatchesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_competitionDetail_to_competitionTableFragment"
+            app:destination="@id/competitionTableFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/competitionMatchesFragment"
+        android:name="com.nakhmadov.footballapp.ui.competition_matches.CompetitionMatchesFragment"
+        android:label="CompetitionMatches"
+        tools:layout="@layout/competition_matches_fragment">
+        <argument
+            android:name="competitionId"
+            app:argType="integer" />
+        <argument
+            android:name="status"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_competitionMatchesFragment_to_teamFragment"
+            app:destination="@id/teamFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="competitionName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/competitionTableFragment"
+        android:name="com.nakhmadov.footballapp.ui.competition_table.CompetitionTableFragment"
+        android:label="competition_table_fragment"
+        tools:layout="@layout/competition_table_fragment">
+        <argument
+            android:name="competitionId"
+            app:argType="integer" />
+        <argument
+            android:name="competitionName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_competitionTableFragment_to_teamFragment"
+            app:destination="@id/teamFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/competitionStatsFragment"
+        android:name="com.nakhmadov.footballapp.ui.competition_stats.CompetitionStatsFragment"
+        android:label="competition_stats_fragment"
+        tools:layout="@layout/competition_stats_fragment">
+        <argument
+            android:name="competitionId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/competitionTeamsFragment"
+        android:name="com.nakhmadov.footballapp.ui.competition_teams.CompetitionTeamsFragment"
+        android:label="competition_teams_fragment"
+        tools:layout="@layout/competition_teams_fragment">
+        <argument
+            android:name="competitionId"
+            app:argType="integer" />
+        <argument
+            android:name="competitionName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_competitionTeamsFragment_to_teamFragment"
+            app:destination="@id/teamFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/teamFragment"
+        android:name="com.nakhmadov.footballapp.ui.team.TeamFragment"
+        android:label="TeamFragment"
+        tools:layout="@layout/team_fragment">
+
+        <argument
+            android:name="teamId"
+            app:argType="integer" />
+        <argument
+            android:name="teamName"
+            app:argType="string" />
+        <argument
+            android:name="teamIsFavorite"
+            app:argType="boolean" />
+    </fragment>
+
+</navigation>

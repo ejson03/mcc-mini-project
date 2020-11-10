@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.nakhmadov.footballapp.data.db.models.Team" />
+
+        <variable
+            name="listener"
+            type="com.nakhmadov.footballapp.listeners.TeamClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/listsBackground"
+        android:onClick="@{() -> listener.onTeamClick(item)}"
+        android:paddingBottom="6dp">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="@dimen/dp10"
+            android:background="@color/separatorColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/team_logo_image" />
+
+        <ImageView
+            android:id="@+id/team_logo_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="6dp"
+            android:contentDescription="TODO"
+            app:imageWithUrl="@{item.emblemUrl}"
+            app:layout_constraintStart_toStartOf="@+id/team_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/team_name_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/normal_spacing"
+            android:fontFamily="@font/marmelad"
+            android:maxLines="1"
+            android:textColor="@color/textGrayColorDark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/team_logo_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/team_name_guideline"
+            app:layout_constraintTop_toTopOf="@+id/team_logo_image"
+            app:setTextOrEmpty="@{item.name}"
+            tools:text="Chelsea" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/team_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/team_name_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="56dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

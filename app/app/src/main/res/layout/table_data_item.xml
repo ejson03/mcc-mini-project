@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.nakhmadov.footballapp.ui.models.TableItemDomain" />
+
+        <variable
+            name="listener"
+            type="com.nakhmadov.footballapp.listeners.TeamClickListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FAFAFA"
+        android:onClick="@{() -> listener.onTableTeamClick(item)}"
+        android:paddingBottom="6dp">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="@dimen/dp10"
+            android:background="@color/separatorColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/team_logo_image" />
+
+
+        <TextView
+            android:id="@+id/position_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/marmelad"
+            android:maxLines="1"
+            android:textColor="@color/textGrayColorDark"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/team_logo_image"
+            app:layout_constraintEnd_toEndOf="@id/team_guideline"
+            app:layout_constraintStart_toStartOf="@+id/position_guideline"
+            app:layout_constraintTop_toTopOf="@+id/team_logo_image"
+            app:setTextOrEmpty="@{item.position.toString()}"
+            tools:text="12" />
+
+        <ImageView
+            android:id="@+id/team_logo_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="6dp"
+            android:contentDescription="@string/team_description"
+            app:imageWithUrl="@{item.teamEmblemUrl}"
+            app:layout_constraintStart_toStartOf="@+id/team_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/code_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/normal_spacing"
+            android:fontFamily="@font/marmelad"
+            android:maxLines="1"
+            android:textColor="@color/textGrayColorDark"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/team_logo_image"
+            app:layout_constraintEnd_toEndOf="@id/played_guideline"
+            app:layout_constraintStart_toStartOf="@+id/team_code_guideline"
+            app:layout_constraintTop_toTopOf="@+id/team_logo_image"
+            app:setTextOrEmpty="@{item.teamCode}"
+            tools:text="CHE" />
+
+        <TextView
+            android:id="@+id/played_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/normal_spacing"
+            android:fontFamily="@font/marmelad"
+            android:maxLines="1"
+            android:textColor="@color/textGrayColorDark"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/team_logo_image"
+            app:layout_constraintEnd_toEndOf="@id/played_guideline"
+            app:layout_constraintStart_toStartOf="@+id/played_guideline"
+            app:layout_constraintTop_toTopOf="@+id/team_logo_image"
+            app:setTextOrEmpty="@{item.playedGames.toString()}"
+            tools:text="12" />
+
+        <TextView
+            android:id="@+id/won_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/normal_spacing"
+            android:fontFamily="@font/marmelad"
+            android:maxLines="1"
+            android:textColor="@color/textGrayColorDark"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/team_logo_image"
+            app:layout_constraintEnd_toEndOf="@id/won_guideline"
+            app:layout_constraintStart_toStartOf="@+id/won_guideline"
+            app:layout_constraintTop_toTopOf="@+id/team_logo_image"
+            app:setTextOrEmpty="@{item.won.toString()}"
+            tools:text="8" />
+
+        <TextView
+            android:id="@+id/draw_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/normal_spacing"
+            android:fontFamily="@font/marmelad"
+            android:maxLines="1"
+            android:textColor="@color/textGrayColorDark"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/team_logo_image"
+            app:layout_constraintEnd_toEndOf="@id/draw_guideline"
+            app:layout_constraintStart_toStartOf="@+id/draw_guideline"
+            app:layout_constraintTop_toTopOf="@+id/team_logo_image"
+            app:setTextOrEmpty="@{item.draw.toString()}"
+            tools:text="2" />
+
+        <TextView
+            android:id="@+id/lose_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/normal_spacing"
+            android:fontFamily="@font/marmelad"
+            android:maxLines="1"
+            android:textColor="@color/textGrayColorDark"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/team_logo_image"
+            app:layout_constraintEnd_toEndOf="@id/lose_guideline"
+            app:layout_constraintStart_toStartOf="@+id/lose_guideline"
+            app:layout_constraintTop_toTopOf="@+id/team_logo_image"
+            app:setTextOrEmpty="@{item.lost.toString()}"
+            tools:text="2" />
+
+        <TextView
+            android:id="@+id/gd_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/normal_spacing"
+            android:fontFamily="@font/marmelad"
+            android:maxLines="1"
+            android:textColor="@color/textGrayColorDark"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/team_logo_image"
+            app:layout_constraintEnd_toEndOf="@id/gd_guideline"
+            app:layout_constraintStart_toStartOf="@+id/gd_guideline"
+            app:layout_constraintTop_toTopOf="@+id/team_logo_image"
+            app:setTextOrEmpty="@{item.goalDifference.toString()}"
+            tools:text="10" />
+
+        <TextView
+            android:id="@+id/pts_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/normal_spacing"
+            android:fontFamily="@font/marmelad"
+            android:maxLines="1"
+            android:textColor="@color/textGrayColorDark"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/team_logo_image"
+            app:layout_constraintEnd_toEndOf="@id/pts_guideline"
+            app:layout_constraintStart_toStartOf="@+id/pts_guideline"
+            app:layout_constraintTop_toTopOf="@+id/team_logo_image"
+            app:setTextOrEmpty="@{item.points.toString()}"
+            tools:text="26" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/position_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/team_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="44dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/team_code_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="80dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/pts_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="28dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gd_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="60dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lose_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="88dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/draw_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="120dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/won_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="152dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/played_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="184dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

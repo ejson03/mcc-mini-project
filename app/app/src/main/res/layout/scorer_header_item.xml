@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_background"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:id="@+id/player_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/marmelad"
+            android:text="@string/player"
+            android:textColor="@color/textGrayColorLight"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/player_name_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/marmelad"
+            android:text="@string/value"
+            android:textColor="@color/textGrayColorLight"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/goal_value_guideline"
+            app:layout_constraintStart_toStartOf="@+id/goal_value_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/marmelad"
+            android:text="@string/team"
+            android:textColor="@color/textGrayColorLight"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/team_code_guideline"
+            app:layout_constraintStart_toStartOf="@+id/team_code_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/player_name_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/goal_value_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="42dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/team_code_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="120dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
