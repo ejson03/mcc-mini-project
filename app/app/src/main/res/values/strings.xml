@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Football App</string>
+    <string name="app_name">OneFoot World</string>
     <string name="navigation_view_header_title">Football Data</string>
     <string name="competition_bottom_menu">Competitions</string>
     <string name="competition_menu_title">Competitions</string>
@@ -51,4 +51,5 @@
     <string name="d">D</string>
     <string name="w">W</string>
     <string name="p">P</string>
+    <string name="ip">http://10.0.2.2:8080</string>
 </resources>

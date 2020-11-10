@@ -41,7 +41,10 @@ class RegisterActivity : Activity() {
             (params as ArrayList<NameValuePair>).add(BasicNameValuePair("password", passwordtxt))
             val sr =
                 ServerRequest()
-            val json = sr.getJSON("http://10.0.2.2:8080/register", params)
+
+            val ip = getString(R.string.ip)
+            val url = ip.plus("/register")
+            val json = sr.getJSON(url, params)
             if (json != null) {
                 try {
                     val jsonstr = json.getString("response")

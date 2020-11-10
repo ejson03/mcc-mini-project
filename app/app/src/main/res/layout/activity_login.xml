@@ -4,20 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#e9e8dd"
     tools:context=".LoginActivity" >
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"
-        android:layout_height="100px"
+        android:layout_height="wrap_content"
         android:background="#5ba4e5"
         android:layout_gravity="center"
         android:src="@drawable/ic_profile" />
 
     <EditText
-        android:layout_width="440px"
-        android:layout_height="80px"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30px"
         android:id="@+id/email"
@@ -25,53 +24,58 @@
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="440px"
+        android:layout_width="169dp"
         android:layout_gravity="center"
-        android:layout_height="80px"
+        android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:hint="******"/>
 
     <Button
-        android:layout_width="440px"
-        android:layout_height="80px"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:id="@+id/loginbtn"
         android:background="@drawable/btn_back"
         android:textColor="#ffffff"
         android:textAlignment="center"
         android:text="Login"/>
-    <LinearLayout
-        android:layout_width="440px"
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10px"
         android:layout_gravity="center"
-        android:orientation="horizontal" >
-
-
+        android:layout_marginTop="10px"
+        android:orientation="horizontal">
 
         <Button
-            android:layout_width="215px"
-            android:layout_height="80px"
-            android:layout_gravity="center"
             android:id="@+id/register"
+            android:layout_width="169dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:background="@drawable/btn_back_blue"
-            android:textColor="#ffffff"
-            android:textAlignment="center"
             android:text="Register"
-            tools:ignore="ButtonStyle" />
-        <Button
-            android:layout_width="215px"
-            android:layout_height="80px"
-            android:id="@+id/forgotpass"
-            android:layout_marginLeft="10px"
-            android:background="@drawable/btn_back_red"
-            android:textColor="#ffffff"
             android:textAlignment="center"
-            android:text="Forgot Password"
+            android:textColor="#ffffff"
             tools:ignore="ButtonStyle" />
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10px"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/forgotpass"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_back_red"
+        android:text="Forgot Password"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        tools:ignore="ButtonStyle" />
 
+    </RelativeLayout>
 </LinearLayout>

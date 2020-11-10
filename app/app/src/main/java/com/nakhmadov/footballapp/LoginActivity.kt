@@ -56,7 +56,10 @@ class LoginActivity : Activity() {
             (params as ArrayList<NameValuePair>).add(BasicNameValuePair("password", passwordtxt))
             val sr =
                 ServerRequest()
-            val json = sr.getJSON("http://10.0.2.2:8080/login", params)
+            val ip = getString(R.string.ip)
+            val url = ip.plus("/login")
+            val json = sr.getJSON(url, params)
+//            val json = sr.getJSON("http://10.0.2.2:8080/login", params)
             if (json != null) {
                 try {
                     val jsonstr = json.getString("response")
