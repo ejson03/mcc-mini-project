@@ -28,11 +28,12 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration.Builder(
             R.id.competitionsListFragment,
             R.id.favoriteFragment,
+            R.id.LineupFragment,
             R.id.matchesFragment
         ).build()
 
         navController.addOnDestinationChangedListener { _: NavController, nd: NavDestination, _: Bundle? ->
-            if (nd.id == R.id.competitionsListFragment || nd.id == R.id.matchesFragment || nd.id == R.id.favoriteFragment) {
+            if (nd.id == R.id.competitionsListFragment || nd.id == R.id.matchesFragment ||nd.id == R.id.LineupFragment || nd.id == R.id.favoriteFragment) {
                 binding.bottomNavigation.visibility = View.VISIBLE
             } else {
                 binding.bottomNavigation.visibility = View.GONE

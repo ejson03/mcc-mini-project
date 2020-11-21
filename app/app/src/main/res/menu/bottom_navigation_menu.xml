@@ -13,6 +13,11 @@
         android:title="@string/match_menu_title" />
 
     <item
+        android:id="@+id/lineupFragment"
+        android:icon="@drawable/ic_competition"
+        android:title="Line Up" />
+
+    <item
         android:id="@+id/favoriteFragment"
         android:icon="@drawable/ic_favorite"
         android:title="@string/favorite_menu_title" />

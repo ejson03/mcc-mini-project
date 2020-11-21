@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.Addres_Page">
+
+
+    <EditText
+        android:id="@+id/name_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:textSize="25dp"
+        />
+
+    <EditText
+        android:id="@+id/line1_address"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Flat/House No."
+        android:textSize="25dp"
+        android:layout_below="@+id/name_address"
+        />
+    <EditText
+        android:id="@+id/area_address"
+        android:hint="Area"
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line1_address"
+        />
+    <EditText
+        android:id="@+id/landmark_address"
+        android:hint="Landmark"
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/area_address"
+        />
+    <EditText
+        android:id="@+id/city_address"
+        android:hint="City"
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/landmark_address"
+        />
+    <EditText
+        android:id="@+id/pin_address"
+        android:hint="Pin Code"
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/city_address"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
